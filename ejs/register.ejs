@@ -67,6 +67,7 @@
                             }
                         });
                         var id = document.getElementById('id');
+                        console.log('id is : ' + id);
                         $.ajax({
                             url:'http://api.zhengshuqian.com/wx/sendText?id="+id+"',
                             success : function(data){
