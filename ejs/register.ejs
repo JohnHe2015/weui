@@ -66,6 +66,17 @@
                                 window.location.href="./user.html";
                             }
                         });
+                        var id = document.getElementById('id');
+                        $.ajax({
+                            url:'http://api.zhengshuqian.com/wx/sendText?id="+id+"',
+                            success : function(data){
+                                console.log('success');
+                            },
+                            error : function(err)
+                            {
+                                console.log(err);
+                            }
+                        })
                     },
                     error : function(){
                         $.alert({
