@@ -66,7 +66,7 @@
                                 window.location.href="./user.html";
                             }
                         });
-                        var id = document.getElementById('id');
+                        var id = document.getElementById('openid');
                         console.log('id is : ' + id);
                         $.ajax({
                             url:'http://api.zhengshuqian.com/wx/sendText?id="+id+"',
@@ -155,7 +155,7 @@
 
                 <a id="submit" href="javascript:;" class="weui-btn weui-btn_primary">提交注册</a>
             </div>
-            <input type="hidden" name="id" value="<%= data.openid%>"> 
+            <input type="hidden" id="openid" name="id" value="<%= data.openid%>"> 
         </form>     
     </div> 
               
