@@ -66,21 +66,7 @@
                         //         window.location.href="./user.html";
                         //     }
                         // });
- 
-                    },
-                    error : function(){
-                        $.alert({
-                            title: '注册',
-                            text: '对不起注册失败',
-                            onOK: function () {
-                                //点击确认
-                            }
-                        });
-                    }
-                }
-            );
-
-                                   var id = document.getElementById('openid');
+                        var id = document.getElementById('openid');
                         console.log('id is : ' + id);
                         $.ajax({
                             url:'http://api.zhengshuqian.com/wx/sendText',
@@ -105,6 +91,21 @@
                         });
                             }
                         })
+ 
+                    },
+                    error : function(){
+                        $.alert({
+                            title: '注册',
+                            text: '对不起注册失败',
+                            onOK: function () {
+                                //点击确认
+                            }
+                        });
+                    }
+                }
+            );
+
+ 
         })  
     });  
     </script>
