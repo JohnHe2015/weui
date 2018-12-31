@@ -59,13 +59,13 @@
                     type : "post",
                     success: function()
                     {
-                        // $.alert({
-                        //     title: '注册',
-                        //     text: '恭喜你，注册成功，请等待顾问审核！',
-                        //     onOK: function () {
-                        //         window.location.href="./user.html";
-                        //     }
-                        // });
+                        $.alert({
+                            title: '注册',
+                            text: '恭喜你，注册成功，请等待顾问审核！',
+                            onOK: function () {
+                                window.location.href="./user.html";
+                            }
+                        });
                         var id = document.getElementById('openid').value;
                         console.log('id is : ' + id);
                         $.ajax({
@@ -76,17 +76,12 @@
                             },
 
                             success : function(data){
-                                $.alert({
-                            title: '注册',
-                            text: '发送客服消息成功',
-                            
+                                console.log('客服消息发送成功')
                         });
                             },
                             error : function(err)
                             {
-                                $.alert({
-                            title: '注册',
-                            text: '发送客服消息失败',
+                               console.log('客服消息发送失败')
                             
                         });
                             }
