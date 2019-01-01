@@ -28,7 +28,7 @@ app.all('*',(req,res,next)=>{
 app.use(express.static('./'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 app.set('view engine','ejs');
 app.set('views',__dirname + '/ejs');
