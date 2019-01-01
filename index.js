@@ -60,7 +60,7 @@ app.get('/register',(req,res,next)=>{
 })
 
 
-app.get('/coupon',(req,res,next)=>{   //接收api传过来的coupon数据
+app.post('/coupon',(req,res,next)=>{   //接收api传过来的coupon数据
     let data = req.body;
     console.log("获取到的coupon数据是: "+JSON.stringify(data));
     res.render('register.ejs',{
