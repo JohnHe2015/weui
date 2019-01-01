@@ -20,12 +20,12 @@ app.get('/register',(req,res,next)=>{
     console.log(JSON.stringify(req.query));
     // let {id,username} = req.query;
     let id = req.query.openid;
-    let username = req.query.username;
+    //let username = req.query.username;
     request.get({
         url : `http://api.zhengshuqian.com/login/isLogin?id=${id}`
     },function(error, response, body){
         if(response.statusCode == 200){
-            let data = JSON.parse(body);
+            //let data = JSON.parse(body);
             if(data.errcode == 1)
             {
                 //已经注册的用户，那么先获取用户的用户名等信息
