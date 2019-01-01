@@ -22,14 +22,12 @@ app.get('/register',(req,res,next)=>{
     request.get({
         url : `http://api.zhengshuqian.com/login/isLogin?id=${id}`
     },function(error, response, body){
-        console.log('come in callback');
-        console.log('response : '+JSON.stringify(response));
-        console.log(body);
         if(response.statusCode == 200){
-            if(response.errcode == 1)
+            let data = JSON.parse(body);
+            if(data.errcode == 1)
             {
                 res.render('user.ejs',{
-
+                    //输送用户信息到user.ejs
                 })
                 res.end();   //存在用户直接跳转到用户界面
             }
