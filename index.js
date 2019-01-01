@@ -26,6 +26,7 @@ app.get('/register',(req,res,next)=>{
             let data = JSON.parse(body);
             if(data.errcode == 1)
             {
+                console.log('execute user.ejs')
                 res.render('user.ejs',{
                     id : id,
                     username : username

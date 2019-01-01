@@ -57,14 +57,19 @@
             margin-top: 24px;
             margin-left: 4px
         }
+        .username{
+            position: absolute;
+            top: 30px;
+        }
+
 
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <div class="weui-flex">
-            <img class="card" src="/public/card.jpg" alt="">
-            <span class="username"><%= username%></span>
+        <div style="position: relative;" class="weui-flex">
+            <img class="card" src="/public/card.jpg" alt="" /> 
+            <span class="username">123<%= username%></span>
         </div>
     <!-- 九宫格 -->
         <div style="position: static" class="weui-grids">
