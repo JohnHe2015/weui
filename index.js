@@ -22,7 +22,8 @@ app.get('/register',(req,res,next)=>{
         url : `http://api.zhengshuqian.com/login/isLogin?id=${req.query.openid}`
     },function(error, response, body){
         console.log('come in callback');
-        console.log(`response: ${response}`);
+        console.log('response : '+JSON.stringify(response));
+        console.log(body);
         if(response.statusCode == 200){
             if(response.errcode == 1)
             {
