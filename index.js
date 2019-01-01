@@ -28,10 +28,11 @@ app.get('/register',(req,res,next)=>{
             let data = JSON.parse(body);
             if(data.errcode == 1)
             {
+                //已经注册的用户，那么先获取用户的用户名等信息
                 console.log('execute user.ejs')
                 res.render('user.ejs',{
-                    id : id,
-                    username : username
+                    id : data.id,
+                    username : data.username          //获取接口传递过来的username(数据库的username)
                     //输送用户信息到user.ejs
                 })
                 res.end();   //存在用户直接跳转到用户界面
