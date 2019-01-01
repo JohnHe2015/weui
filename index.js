@@ -18,7 +18,7 @@ app.get('/',(req,res,next)=>{
 app.get('/register',(req,res,next)=>{
     console.log('come in register');
     console.log(JSON.stringify(req.query));
-    let id = req.query.openid;
+    let {id,username} = req.query;
     request.get({
         url : `http://api.zhengshuqian.com/login/isLogin?id=${id}`
     },function(error, response, body){
@@ -27,6 +27,8 @@ app.get('/register',(req,res,next)=>{
             if(data.errcode == 1)
             {
                 res.render('user.ejs',{
+                    id : id,
+                    username : username
                     //输送用户信息到user.ejs
                 })
                 res.end();   //存在用户直接跳转到用户界面
