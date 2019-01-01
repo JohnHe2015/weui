@@ -5,6 +5,26 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 app.listen(8082);
+
+app.all('*',(req,res,next)=>{
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+    // if(!req.sequelize)
+    // {
+    //     req.sequelize = sequelize;     //挂载sequelize对象
+    //     req.Op = sequelize.Op;
+    //     req.User_Model = User;         //mount model objs
+    //     req.Usertemp_Model = Usertemp;
+    //     req.Coupon_Model = Coupon; 
+    // }
+    if (req.method == 'OPTIONS') {
+        res.send(200);
+      } else {
+        next();
+      }
+});
+
 app.use(express.static('./'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -40,7 +60,7 @@ app.get('/register',(req,res,next)=>{
                     username : data.username          //获取接口传递过来的username(数据库的username)
                     //输送用户信息到user.ejs
                 })
-                res.end();   //存在用户直接跳转到用户界面
+                //res.end();   //存在用户直接跳转到用户界面
             }
             else
             {
