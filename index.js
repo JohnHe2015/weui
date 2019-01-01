@@ -19,7 +19,7 @@ app.get('/register',(req,res,next)=>{
     console.log('come in register');
     console.log(JSON.stringify(req.query));
     // let {id,username} = req.query;
-    let id = req.query.id;
+    let id = req.query.openid;
     let username = req.query.username;
     request.get({
         url : `http://api.zhengshuqian.com/login/isLogin?id=${id}`
