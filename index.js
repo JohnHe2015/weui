@@ -21,11 +21,13 @@ app.get('/register',(req,res,next)=>{
     request.get({
         url : `http://api.zhengshuqian.com/login/isLogin?id=${req.query.openid}`
     },function(error, response, body){
+        console.log('come in callback');
+        console.log(`response: ${response}`);
         if(response.statusCode == 200){
             if(response.errcode == 1)
             {
                 res.render('user.ejs',{
-                    
+
                 })
                 res.end();   //存在用户直接跳转到用户界面
             }
