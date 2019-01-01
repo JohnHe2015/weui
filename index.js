@@ -18,8 +18,9 @@ app.get('/',(req,res,next)=>{
 app.get('/register',(req,res,next)=>{
     console.log('come in register');
     console.log(JSON.stringify(req.query));
+    let id = req.query.openid;
     request.get({
-        url : `http://api.zhengshuqian.com/login/isLogin?id=${req.query.openid}`
+        url : `http://api.zhengshuqian.com/login/isLogin?id=${id}`
     },function(error, response, body){
         console.log('come in callback');
         console.log('response : '+JSON.stringify(response));
