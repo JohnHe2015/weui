@@ -1,9 +1,14 @@
 const express = require('express');
 const request = require('request');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 app.listen(8082);
 app.use(express.static('./'));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.set('view engine','ejs');
 app.set('views',__dirname + '/ejs');
@@ -52,4 +57,13 @@ app.get('/register',(req,res,next)=>{
         }
     })
     
+})
+
+
+app.get('/coupon',(req,res,next)=>{   //接收api传过来的coupon数据
+    let data = req.body;
+    console.log("获取到的coupon数据是: "+JSON.stringify(data));
+    res.render('register.ejs',{
+        data
+    });
 })
