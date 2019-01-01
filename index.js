@@ -82,7 +82,6 @@ app.get('/register',(req,res,next)=>{
 
 app.post('/coupon',(req,res,next)=>{   //接收api传过来的coupon数据
     console.log('come in coupon');
-    console.log(req);
     console.log(req.body);
     console.log(req.body.data);
     console.log(req.query);
