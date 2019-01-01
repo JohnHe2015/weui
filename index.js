@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs');
+const request = require('request');
 
 const app = express();
 app.listen(8082);
@@ -18,13 +18,30 @@ app.get('/',(req,res,next)=>{
 app.get('/register',(req,res,next)=>{
     console.log('come in register');
     console.log(JSON.stringify(req.query));
-    res.render('register.ejs',{      //获取的微信用户数据传递给register
-        data : 
-        {
-            username : req.query.username,
-            openid : req.query.openid,
-            sex : req.query.sex,
-            groupid : req.query.groupid
+    request.get({
+        url : `http://api.zhengshuqian.com/login/isLogin?id=${req.query.openid}`
+    },function(error, response, body){
+        if(response.statusCode == 200){
+            if(response.errcode == 1)
+            {
+                res.render('user.ejs',{
+                    
+                })
+                res.end();   //存在用户直接跳转到用户界面
+            }
+            else
+            {
+                res.render('register.ejs',{      //获取的微信用户数据传递给register
+                    data : 
+                    {
+                        username : req.query.username,
+                        openid : req.query.openid,
+                        sex : req.query.sex,
+                        groupid : req.query.groupid
+                    }
+                })
+            }
         }
     })
+    
 })
