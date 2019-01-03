@@ -104,20 +104,14 @@ app.get('/coupon/:id',(req,res,next)=>{   //接收api传过来的coupon数据
 app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/',(req,res,next)=>{        //接收coupon.ejs的参数传递给detail页面
     let {id,count,endTime,startTime,type} = req.params;
     var arr = [];
-    console.log('count : '+count);
-    console.log('parseIntcount: '+parseInt(count));
     let count_temp = parseInt(count);
-    console.log(count_temp);
     for(let i = 1;i <= count_temp ; i++)    //detail界面下拉框数组
     {
-        console.log(i);
         arr.push({
             label: i.toString(),
             value: i
         })
     }
-    console.log(arr)
-    console.log(JSON.stringify(arr));
     res.render('couponDetail.ejs',{
         data : {
             id : id,
