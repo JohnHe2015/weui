@@ -125,8 +125,18 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/',(req,res,next)=>{
 });
 
 app.post('/coupon/generateQR/',(req,res,next)=>{
-    console.log('come in coupon/generateQR');
-    console.log(req.params);
-    console.log(req.query);
-    console.log(req.body);
+    let {id,count,type,startTime,endTime} = req.body;
+    request.get(
+        {   
+            url:`http://api.zhengshuqian.com/wx/generateQR/`,
+        },
+        function(error, response, body){
+            let data;
+            if(!error && response.statusCode == 200)
+            {
+                data = JSON.parse(body);
+                console.log(data.result);
+                
+            }
+        })
 })
