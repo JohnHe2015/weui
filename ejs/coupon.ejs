@@ -46,7 +46,6 @@
                     
                     <div class="weui-panel__bd">
                         <% for(let i = 0;i < data.length;i++){ %>
-                            <% console.log(data[i].type); %>
                             <% if(data[i].type == 1){ %>
                                 <% data[i].type = '咖啡券';} %>
                             <% if(data[i].type == 2){ %>
@@ -68,19 +67,6 @@
                             </div>
                         </a>
                         <% } %>
-                        <!-- <a href="/couponDetail.html">
-                            <div class="weui-media-box weui-media-box_text">
-                                <h4 class="weui-media-box__title">9.5折摄影券</h4>
-                                <div class="box-content">
-                                    <div style="float: left;text-align: left">
-                                        <p class="weui-media-box__desc">2019-01-12到期</p>
-                                    </div>
-                                    <div style="float: right;text-align: right">
-                                        <p class="weui-media-box__desc">剩余 3</p>
-                                    </div>
-                                </div>
-                        </div>
-                        </a> -->
                     </div>
                     <!-- <div class="weui-panel__ft">
                         <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
