@@ -47,19 +47,18 @@
                     <div class="weui-panel__bd">
                         <% Array.from(data).map((item,index)=>{ %>
                             <%   if(item.type == "1") %>
-                            {
-                                item.type = "MUSEE COFFEE咖啡券";
-                            }
-                            else if(item.type == "2")
-                            {
-                                item.type = (parseInt(item.rate)*10)+"折拍摄券";
-                            }
-                            else if(item.type == "3")
-                            {
-                                item.type = (parseInt(item.rate)*10)+"折摄影券";
-                            }
-                            item.endTime = (parseInt(item.enTime)/1000).getTime();
-                        %>
+                            <% { %>
+                                <% item.type = "MUSEE COFFEE咖啡券"; %>
+                            <% } %>
+                            <% else if(item.type == "2") %>
+                            <% { %>
+                                <% item.type = (parseInt(item.rate)*10)+"折拍摄券"; %>
+                            <% } %>
+                            <% else if(item.type == "3") %>
+                            <% { %>
+                                <% item.type = (parseInt(item.rate)*10)+"折摄影券"; %>
+                            <% } %>
+                            <% item.endTime = (parseInt(item.enTime)/1000).getTime(); %>
                         <a href="/couponDetail.html">
                             <div class="weui-media-box weui-media-box_text">
                                 <h4 class="weui-media-box__title"><%= item.type %></h4>
