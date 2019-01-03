@@ -46,9 +46,9 @@
                     
                     <div class="weui-panel__bd">
                         <% for(let i = 0;i < data.length;i++){ %>
+                            <% console.log(data[i].type); %>
                             <% if(data[i].type == 1) %>
                             <% { %>
-                                <% console.log('come in type1'); %>
                                 <% data[i].type = "MUSEE COFFEE咖啡券"; %>
                             <% } %>
                             <% if(data[i].type == 2) %>
