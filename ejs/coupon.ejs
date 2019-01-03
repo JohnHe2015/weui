@@ -46,19 +46,20 @@
                     
                     <div class="weui-panel__bd">
                         <% for(let i = 0;i < data.length;i++){ %>
+                            <% let _endTime,_type; %>
                             <% if(data[i].type == 1){ %>
-                                <% data[i].type = 'MUSEE CAFE 咖啡券';} %>
+                                <% _type = 'MUSEE CAFE 咖啡券';} %>
                             <% if(data[i].type == 2){ %>
-                                <% data[i].type = ((data[i].rate)*10)+"折拍摄券";} %>
+                                <% _type = ((data[i].rate)*10)+"折拍摄券";} %>
                             <% if(data[i].type == 3){ %>
-                                <% data[i].type = ((data[i].rate)*10)+"折摄影券";} %>
-                            <% data[i].endTime = utils.getDate(parseInt(data[i].endTime)); %>
+                                <% _type = ((data[i].rate)*10)+"折摄影券";} %>
+                            <% _endTime = utils.getDate(parseInt(data[i].endTime)); %>
                         <a href="/coupon/detail/<%= data[i].id %>/<%= data[i].type %>/<%= data[i].startTime %>/<%= data[i].endTime %>/<%= data[i].count %>">
                             <div class="weui-media-box weui-media-box_text">
-                                <h4 class="weui-media-box__title"><%= data[i].type %></h4>
+                                <h4 class="weui-media-box__title"><%= _type %></h4>
                                 <div class="box-content">
                                     <div style="float: left;text-align: left">
-                                        <p class="weui-media-box__desc"><%= data[i].endTime %>到期</p>
+                                        <p class="weui-media-box__desc"><%= _endTime %>到期</p>
                                     </div>
                                     <div style="float: right;text-align: right">
                                         <p class="weui-media-box__desc">剩余 <%= data[i].count %> </p>

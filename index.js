@@ -123,3 +123,9 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/',(req,res,next)=>{
         }   
     });
 });
+
+app.get('/coupon/generateQR',(req,res,next)=>{
+    console.log(req.params);
+    console.log(req.query);
+    console.log(req.body);
+})

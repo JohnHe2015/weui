@@ -15,7 +15,7 @@
     <style>
          body{
             height: 100vh;
-            /* background: #141414; */
+            background: #141414;
         }
         .top{
             height: 100%;
@@ -83,7 +83,32 @@
     });
 
     $("#confirm2").on('click',function(){
-        
+        $.ajax(
+            { 
+                url: "/coupon/generateQR", 
+                data : {
+                    count : $("#count").text().substring(0,1),  //选择的券数量
+                    id : '<%= data.id%>',
+                    type : '<%= data.type%>',
+                    startTime : '<%= data.startTime%>',
+                    endTime : '<%= data.endTime%>',
+                },
+                type : "get",
+                success: function()
+                {
+                    
+                }, 
+                error : function(){
+                    $.alert({
+                        title: '注册',
+                        text: '对不起注册失败',
+                        onOK: function () {
+                                //点击确认
+                        }
+                    });
+                }
+            }
+        );
     });
 
     });  
@@ -113,8 +138,15 @@
                 <div class="weui-dialog">
                     <div class="weui-dialog__hd"><strong class="weui-dialog__title">请确认使用:</strong></div>
                     <div class="weui-dialog__bd">
+                        <% let _type; %>
+                            <% if(data.type == 1){ %>
+                                <% _type = '咖啡券';} %>
+                            <% if(data.type == 2){ %>
+                                <% _type = '拍摄券';} %>
+                            <% if(data.type == 3){ %>
+                                <% _type = '摄影券';} %>    
                         <p>
-                            <%= data.type %>
+                            <%= _type %>
                         </p>
                         <p id="count">
                         </p>
