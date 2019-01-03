@@ -112,6 +112,12 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/',(req,res,next)=>{
             value: i
         })
     }
+    console.log(arr)
+    console.log(id)
+    console.log(count)
+    console.log(endTime)
+    console.log(startTime)
+    console.log(type)
     res.render('couponDetail.ejs',{
         data : {
             id : id,
