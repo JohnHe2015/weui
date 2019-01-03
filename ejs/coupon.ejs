@@ -46,17 +46,17 @@
                     
                     <div class="weui-panel__bd">
                         <% Array.from(data).map((item,index)=>{ %>
-                            <% if(item.type == "1") %>
+                            <% if(item.type == 1) %>
                             <% { %>
                                 <% item.type = "MUSEE COFFEE咖啡券"; %>
                             <% } %>
-                            <% if(item.type == "2") %>
+                            <% if(item.type == 2) %>
                             <% { %>
-                                <% item.type = (parseInt(item.rate)*10)+"折拍摄券"; %>
+                                <% item.type = ((item.rate)*10)+"折拍摄券"; %>
                             <% } %>
-                            <% if(item.type == "3") %>
+                            <% if(item.type == 3) %>
                             <% { %>
-                                <% item.type = (parseInt(item.rate)*10)+"折摄影券"; %>
+                                <% item.type = ((item.rate)*10)+"折摄影券"; %>
                             <% } %>
                             <% item.endTime = utils.getDate(parseInt(item.endTime)) %>
                         <a href="/couponDetail.html">
