@@ -45,20 +45,36 @@
             <div class="weui-panel weui-panel_access">
                     
                     <div class="weui-panel__bd">
+                        <% data.map((item,index)=>{ 
+                            if(item.type == "1")
+                            {
+                                item.type = "MUSEE COFFEE咖啡券";
+                            }
+                            else if(item.type == "2")
+                            {
+                                item.type = (parseInt(item.rate)*10)+"折拍摄券";
+                            }
+                            else if(item.type == "3")
+                            {
+                                item.type = (parseInt(item.rate)*10)+"折摄影券";
+                            }
+                            item.endTime = (parseInt(item.enTime)/1000).getTime();
+                        %>
                         <a href="/couponDetail.html">
                             <div class="weui-media-box weui-media-box_text">
-                                <h4 class="weui-media-box__title">MUSEE COFFEE咖啡券</h4>
+                                <h4 class="weui-media-box__title"><%= item.type %></h4>
                                 <div class="box-content">
                                     <div style="float: left;text-align: left">
-                                        <p class="weui-media-box__desc">2019-01-12到期</p>
+                                        <p class="weui-media-box__desc"><%= item.endTime %>到期</p>
                                     </div>
                                     <div style="float: right;text-align: right">
-                                        <p class="weui-media-box__desc">剩余 2 </p>
+                                        <p class="weui-media-box__desc">剩余 <%= item.count %> </p>
                                     </div>
                                 </div>
                             </div>
                         </a>
-                        <a href="/couponDetail.html">
+                        <% }) %>
+                        <!-- <a href="/couponDetail.html">
                             <div class="weui-media-box weui-media-box_text">
                                 <h4 class="weui-media-box__title">9.5折摄影券</h4>
                                 <div class="box-content">
@@ -70,7 +86,7 @@
                                     </div>
                                 </div>
                         </div>
-                        </a>
+                        </a> -->
                     </div>
                     <!-- <div class="weui-panel__ft">
                         <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
