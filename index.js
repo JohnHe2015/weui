@@ -105,8 +105,10 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/',(req,res,next)=>{
     let {id,count,endTime,startTime,type} = req.params;
     var arr = [];
     let count_temp = parseInt(count);
+    console.log(count_temp);
     for(let i = 1;i <= count_temp ; i++)    //detail界面下拉框数组
     {
+        console.log(i);
         arr.push({
             label: i.toString(),
             value: i
