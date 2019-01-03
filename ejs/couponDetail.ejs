@@ -15,7 +15,7 @@
     <style>
          body{
             height: 100vh;
-            background: #141414;
+            /* background: #141414; */
         }
         .top{
             height: 100%;
@@ -40,6 +40,7 @@
         }
         .js_dialog{
             height: 100px;
+            z-index: 9999;
         }
     </style>
     <script>
@@ -59,8 +60,8 @@
 
     $("#confirm").on('click', function(){
         console.log('click this');
-        $('#iosDialog1').css('display','block');
-        $("#iosDialog1").css({ opacity: .4 });
+        // $('#iosDialog1').css('display','block');
+
         $("#iosDialog1").fadeIn(200);
         
     })
@@ -87,7 +88,7 @@
             <!-- dialog begin -->
             
         </div>
-        <div class="js_dialog" id="iosDialog1" style="opacity: 0; display: none;">
+        <div class="js_dialog" id="iosDialog1" style="display: none;">
                 <div class="weui-mask"></div>
                 <div class="weui-dialog">
                     <div class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗标题</strong></div>
