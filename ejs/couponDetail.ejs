@@ -54,10 +54,12 @@
         });
     });
 
-    var $iosDialog1 = $("#iosDialog1");
     $("#confirm").on('click', function(){
         console.log('click this');
-         $iosDialog1.fadeIn(200);
+        $('#iosDialog1').css('display','block');
+        $("#iosDialog1").css({ opacity: .4 });
+        $("#iosDialog1").fadeIn(200);
+        
     })
 
     });  
@@ -91,6 +93,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
 </body>
 </html>
