@@ -55,10 +55,23 @@
     });
 
     $("#confirm").on('click', function(){
+        let count = $('#showPicker').text(result[0]);
+        count = parseInt(count);
+        if(isNaN(count)){
+            $.alert({
+                title: '抱歉',
+                text: '请先选择数量',
+                onOK: function () {
+                    //点击确认
+                }
+            });
+            return;
+        }
         $(".weui-mask").css({ opacity: 1 });
         $(".weui-mask").css("visibility","visible");
         $(".weui-dialog").css({ opacity: 1 });
-        $(".weui-dialog").css("visibility","visible"); 
+        $(".weui-dialog").css("visibility","visible");
+        $("#count").text(count);
     })
 
     });  
@@ -91,7 +104,7 @@
                         <p>
                             <%= data.type %>
                         </p>
-                        <p>
+                        <p id="count">
                             <%= data.count %>张
                         </p>
                     </div>
