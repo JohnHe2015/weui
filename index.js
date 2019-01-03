@@ -80,7 +80,7 @@ app.get('/register',(req,res,next)=>{
 })
 
 
-app.post('/coupon/:id',(req,res,next)=>{   //接收api传过来的coupon数据
+app.get('/coupon/:id',(req,res,next)=>{   //接收api传过来的coupon数据
     console.log('come in coupon');
     let id = req.params.id;
     request.get(
