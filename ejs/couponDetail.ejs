@@ -87,7 +87,7 @@
         $.ajax(
             { 
                 url: "/coupon/generateQR", 
-                type : "get",
+                type : "post",
                 data : {
                     count : $("#count").text().substring(0,1),  //选择的券数量
                     id : '<%= data.id%>',
