@@ -92,6 +92,8 @@ app.get('/coupon/:id',(req,res,next)=>{   //接收api传过来的coupon数据
             if(!error && response.statusCode == 200)
             {
                 data = JSON.parse(body);
+                console.log(typeof data.result)
+                console.log(JSON.stringify(data.result));
                 res.render('coupon.ejs',{
                     data : data.result   
                 });

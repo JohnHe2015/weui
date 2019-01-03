@@ -45,7 +45,7 @@
             <div class="weui-panel weui-panel_access">
                     
                     <div class="weui-panel__bd">
-                        <% data.map((item,index)=>{ %>
+                        <% Array.from(data).map((item,index)=>{ %>
                             <%   if(item.type == "1") %>
                             {
                                 item.type = "MUSEE COFFEE咖啡券";
