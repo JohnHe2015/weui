@@ -60,11 +60,11 @@
             value: 5
         }], {
             onChange: function (result) {
-                console.log(result);
+                //console.log(result);
             },
             onConfirm: function (result) {
-                console.log(result);
-                $('#showPicker').val(result[0]);
+                console.log(result[0]);
+                $('#showPicker').text(result[0]);
             }
         });
     });
