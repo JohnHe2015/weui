@@ -80,11 +80,21 @@ app.get('/register',(req,res,next)=>{
 })
 
 
-app.post('/coupon',(req,res,next)=>{   //接收api传过来的coupon数据
+app.post('/coupon/:id',(req,res,next)=>{   //接收api传过来的coupon数据
     console.log('come in coupon');
-    console.log(req.body.data);
-    res.render('coupon.ejs',{
-        data : req.body.data   
-    });
-    res.end();
+    let id = req.params.id;
+    request.get(
+        {   
+            url:`http://api.zhengshuqian.com/coupon/getById/${id}`,
+        },
+        function(error, response, body){
+            let data;
+            if(!error && response.statusCode == 200)
+            {
+                data = JSON.parse(body);
+                res.render('coupon.ejs',{
+                    data : data.data   
+                });
+            }
+        })
 })
