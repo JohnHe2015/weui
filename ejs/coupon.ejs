@@ -53,7 +53,7 @@
                             <% if(data[i].type == 3){ %>
                                 <% data[i].type = ((data[i].rate)*10)+"折摄影券";} %>
                             <% data[i].endTime = utils.getDate(parseInt(data[i].endTime)); %>
-                        <a href="/coupon/detail?id=<%= data[i].id %>&type=<%= data[i].type %>&startTime=<%= data[i].startTime %>&endTime=<%= data[i].endTime %>&count=<%= data[i].count %>">
+                        <a href="/coupon/detail/id=<%= data[i].id %>/type=<%= data[i].type %>/startTime=<%= data[i].startTime %>/endTime=<%= data[i].endTime %>/count=<%= data[i].count %>">
                             <div class="weui-media-box weui-media-box_text">
                                 <h4 class="weui-media-box__title"><%= data[i].type %></h4>
                                 <div class="box-content">
