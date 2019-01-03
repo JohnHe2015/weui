@@ -93,7 +93,7 @@ app.get('/coupon/:id',(req,res,next)=>{   //接收api传过来的coupon数据
             {
                 data = JSON.parse(body);
                 res.render('coupon.ejs',{
-                    data : data.result   
+                    data : JSON.parse(data.result)   
                 });
             }
         })
