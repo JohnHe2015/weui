@@ -86,4 +86,5 @@ app.post('/coupon',(req,res,next)=>{   //接收api传过来的coupon数据
     res.render('coupon.ejs',{
         data : req.body.data   
     });
+    res.end();
 })
