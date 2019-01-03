@@ -47,19 +47,13 @@
                     <div class="weui-panel__bd">
                         <% for(let i = 0;i < data.length;i++){ %>
                             <% console.log(data[i].type); %>
-                            <% if(data[i].type == 1) %>
-                            <% { %>
-                                <% data[i].type = '咖啡券'; %>
-                            <% } %>
-                            <% if(data[i].type == 2) %>
-                            <% { %>
-                                <% data[i].type = ((data[i].rate)*10)+"折拍摄券"; %>
-                            <% } %>
-                            <% if(data[i].type == 3) %>
-                            <% { %>
-                                <% data[i].type = ((data[i].rate)*10)+"折摄影券"; %>
-                            <% } %>
-                            <% data[i].endTime = utils.getDate(parseInt(data[i].endTime)) %>
+                            <% if(data[i].type == 1){ %>
+                                <% data[i].type = '咖啡券';} %>
+                            <% if(data[i].type == 2){ %>
+                                <% data[i].type = ((data[i].rate)*10)+"折拍摄券";} %>
+                            <% if(data[i].type == 3){ %>
+                                <% data[i].type = ((data[i].rate)*10)+"折摄影券";} %>
+                            <% data[i].endTime = utils.getDate(parseInt(data[i].endTime)); %>
                         <a href="/couponDetail.html">
                             <div class="weui-media-box weui-media-box_text">
                                 <h4 class="weui-media-box__title"><%= data[i].type %></h4>
