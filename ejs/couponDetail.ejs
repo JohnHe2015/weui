@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/weui.min.css">
     <link rel="stylesheet" href="/jquery-weui.min.css">
     <script src="/jquery.min.js"></script>
-    <!-- <script src="/jquery-weui.min.js"></script> -->
+    <script src="/jquery-weui.min.js"></script>
     <script src="/swiper.min.js"></script>
     <script src="/city-picker.min.js"></script>
     <script src="/weui.min.js"></script>
@@ -67,12 +67,24 @@
             });
             return;
         }
+        $("#count").text(count+'张');
         $(".weui-mask").css({ opacity: 1 });
         $(".weui-mask").css("visibility","visible");
         $(".weui-dialog").css({ opacity: 1 });
         $(".weui-dialog").css("visibility","visible");
-        $("#count").text(count);
-    })
+        
+    });
+
+    $("#cancel").on('click', function(){
+        $(".weui-mask").css({ opacity: 0 });
+        $(".weui-mask").css("visibility","hidden");
+        $(".weui-dialog").css({ opacity: 0 });
+        $(".weui-dialog").css("visibility","hidden");
+    });
+
+    $("#confirm2").on('click',function(){
+        
+    });
 
     });  
     </script>
@@ -105,12 +117,11 @@
                             <%= data.type %>
                         </p>
                         <p id="count">
-                            <%= data.count %>张
                         </p>
                     </div>
                     <div class="weui-dialog__ft">
-                        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
-                        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+                        <a id="confirm2" href="javascript:void(0);" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                        <a id="cancel" href="javascript:void(0);" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
                     </div>
                 </div>
         </div>
