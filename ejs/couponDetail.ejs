@@ -55,11 +55,10 @@
     });
 
     $("#confirm").on('click', function(){
-        console.log('click this');
-        // $('#iosDialog1').css('display','block');
-
-        $("#iosDialog1").fadeIn(200);
-        
+        $(".weui-mask").css({ opacity: .4 });
+        $(".weui-mask").css("visibility","visible");
+        $(".weui-dialog").css({ opacity: .4 });
+        $(".weui-dialog").css("visibility","visible"); 
     })
 
     });  
