@@ -55,7 +55,7 @@
     });
 
     $("#confirm").on('click', function(){
-        let count = $('#showPicker').text(result[0]);
+        let count = $('#showPicker').text();
         count = parseInt(count);
         if(isNaN(count)){
             $.alert({
