@@ -36,16 +36,6 @@
             color : #816d56;
         }
     </style>
-    <script>
-        function getDate(date)
-        {
-            var date = new Date(date);//如果date为13位不需要乘1000
-            var Y = date.getFullYear() + '-';
-            var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-            var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
-            return Y+M+D;
-        }
-    </script>
 </head>
 <body>
         <div class="wrapper">
@@ -68,7 +58,7 @@
                             <% { %>
                                 <% item.type = (parseInt(item.rate)*10)+"折摄影券"; %>
                             <% } %>
-                            <% item.endTime = getDate(parseInt(item.endTime)) %>
+                            <% item.endTime = utils.getDate(parseInt(item.endTime)) %>
                         <a href="/couponDetail.html">
                             <div class="weui-media-box weui-media-box_text">
                                 <h4 class="weui-media-box__title"><%= item.type %></h4>
