@@ -115,10 +115,11 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/',(req,res,next)=>{
     res.render('couponDetail.ejs',{
         data : {
             id : id,
-            count : arr,
+            arr : arr,
             type : type,
             startTime : startTime,
-            endTime : endTime
+            endTime : endTime,
+            count : count_temp
         }   
     });
 });
