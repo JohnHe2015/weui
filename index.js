@@ -146,17 +146,33 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,ne
 
 app.post('/coupon/generateQR/',(req,res,next)=>{
     let {id,count,type,startTime,endTime} = req.body;
-    request.get(
-        {   
-            url:`http://api.zhengshuqian.com/wx/generateQR/`,   //应该调用通用事件接口
-        },
-        function(error, response, body){
-            let data;
-            if(!error && response.statusCode == 200)
-            {
-                data = JSON.parse(body);
-                console.log(data.result);
+    // request.post(
+    //     {   
+    //         url:`http://api.zhengshuqian.com/wx/generateQR/`,   //应该调用通用事件接口
+    //     },
+    //     function(error, response, body){
+    //         let data;
+    //         if(!error && response.statusCode == 200)
+    //         {
+    //             data = JSON.parse(body);
+    //             console.log(data.result);
                 
+    //         }
+    //     })
+    request.post({
+        url:'http://api.zhengshuqian.com/wx/generateQR/', 
+        form: {
+            id : id,
+            count : count,
+            type : type,
+            startTime : startTime,
+            endTime : endTime
+            }}, 
+        function(err,httpResponse,body)
+        { 
+            if(err) console.log(err);
+            else{
+                console.log(body);
             }
         })
 })
