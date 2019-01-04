@@ -117,9 +117,8 @@
                 },
                 success: function(json)
                 {
-                    alert(json);
                     let data = JSON.parse(json);
-                    window.location.href = ('/coupon/generateQR?imgsrc='+encodeURIComponent(data.result));
+                    window.location.href = ('/coupon/generateQR/'+encodeURIComponent(data.result));
                 }, 
                 error : function(){
                     $.alert({
