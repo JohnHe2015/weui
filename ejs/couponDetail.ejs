@@ -115,9 +115,10 @@
                     startTime : '<%= data.startTime%>',
                     endTime : '<%= data.endTime%>',
                 },
-                success: function(data)
+                success: function(json)
                 {
-                    console.log(data.result);
+                    alert(json);
+                    let data = JSON.parse(json);
                     window.location.href = ('/coupon/generateQR/'+data.result);
                 }, 
                 error : function(){
