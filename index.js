@@ -129,8 +129,8 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,ne
     }
     console.log(startTime);
     console.log(endTime);
-    _startTime = utils.getDate2(startTime);
-    _endTime = utils.getDate2(endTime);
+    _startTime = utils.getDate(startTime);
+    _endTime = utils.getDate(endTime);
     res.render('couponDetail.ejs',{
         data : {
             id : id,
