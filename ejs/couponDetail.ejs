@@ -118,7 +118,9 @@
                 success: function(json)
                 {
                     let data = JSON.parse(json);
-                    window.location.href = ('/coupon/generateQR/'+encodeURIComponent(data.result));
+                    let src = encodeURIComponent(data.result);
+                    alert(src);
+                    window.location.href = ('/coupon/generateQR/'+ src);
                 }, 
                 error : function(){
                     $.alert({
