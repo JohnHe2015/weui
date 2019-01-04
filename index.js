@@ -170,10 +170,12 @@ app.post('/coupon/generateQR/',(req,res,next)=>{
             }}, 
         function(err,httpResponse,body)
         { 
-            console.log('进入回调');
             if(err) console.log(err);
             else{
-                console.log(body);
+                res.render('scan.ejs',{
+                    src : body.result 
+                });
+                
             }
         })
 })
