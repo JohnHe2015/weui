@@ -127,10 +127,8 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,ne
     {
         cusType = (rate*10)+"折摄影券";
     }
-    console.log(startTime);
-    console.log(endTime);
-    _startTime = utils.getDate(startTime);
-    _endTime = utils.getDate(endTime);
+    _startTime = utils.getDate2(parseInt(startTime));
+    _endTime = utils.getDate2(parseint(endTime));
     res.render('couponDetail.ejs',{
         data : {
             id : id,
