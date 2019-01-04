@@ -106,7 +106,7 @@
         console.log('come in confirm 2');
         $.ajax(
             { 
-                url: "/coupon/generateQR", 
+                url: "http://api.zhengshuqian.com/wx/generateQR", 
                 type : "post",
                 data : {
                     count : $("#count").text().substring(0,1),  //选择的券数量
@@ -115,9 +115,10 @@
                     startTime : '<%= data.startTime%>',
                     endTime : '<%= data.endTime%>',
                 },
-                success: function()
+                success: function(data)
                 {
-                    console.log('success haha');
+                    console.log(data.result);
+                    window.location.href('/coupon/generateQR/'+data.result);
                 }, 
                 error : function(){
                     $.alert({
