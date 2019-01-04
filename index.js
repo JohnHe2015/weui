@@ -113,6 +113,8 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,ne
         })
     }
     let cusType;
+    let _startTime;
+    let _endTime;
     if(type == "1")
     {
         cusType = "MUSEE CAFE 咖啡券";
@@ -127,8 +129,8 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,ne
     }
     console.log(startTime);
     console.log(endTime);
-    let _startTime = utils.getDate2(startTime);
-    let _endTime = utils.getDate2(endTime);
+    _startTime = utils.getDate2(startTime);
+    _endTime = utils.getDate2(endTime);
     res.render('couponDetail.ejs',{
         data : {
             id : id,
