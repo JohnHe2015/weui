@@ -39,10 +39,21 @@
             border: 1px solid #595757;
         }
         .weui-flex{
-            display:flex;
+            position: relative;
         }
         .centerDiv{
-            margin: 0;
+            margin: -8% 0 0 -10%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: #a79175;
+            text-align: center;
+        }
+        .centerDiv .span1{
+            font-size: 20px;
+        }
+        .centerDiv .span2{
+            font-size : 16px;
         }
     </style>
     <script>
@@ -126,8 +137,8 @@
             <div class="weui-flex">
                 <img class="top" src="/public/5.png" alt="">
                 <div class="centerDiv">
-                    <p>测试字123</p>
-                    <p>测试字12334</p>
+                    <p class="span1">测试字123</p>
+                    <p class="span2">测试字12334</p>
                 </div>
             </div>
             <div class="content">
