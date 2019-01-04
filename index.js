@@ -128,7 +128,7 @@ app.post('/coupon/generateQR/',(req,res,next)=>{
     let {id,count,type,startTime,endTime} = req.body;
     request.get(
         {   
-            url:`http://api.zhengshuqian.com/wx/generateQR/`,
+            url:`http://api.zhengshuqian.com/wx/generateQR/`,   //应该调用通用事件接口
         },
         function(error, response, body){
             let data;
