@@ -172,6 +172,7 @@ app.post('/coupon/generateQR/',(req,res,next)=>{
         { 
             if(err) console.log(err);
             else{
+                res.end();
                 res.render('scan.ejs',{
                     src : body.result 
                 });
