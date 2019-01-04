@@ -118,7 +118,7 @@
                 success: function(data)
                 {
                     console.log(data.result);
-                    window.location.href('/coupon/generateQR/'+data.result);
+                    window.location.href = ('/coupon/generateQR/'+data.result);
                 }, 
                 error : function(){
                     $.alert({
