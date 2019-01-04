@@ -120,7 +120,7 @@
                     let data = JSON.parse(json);
                     let src = encodeURIComponent(data.result);
                     alert(src);
-                    window.location.href = ('/coupon/generateQR/'+ src);
+                    window.location.href = ('/coupon/generateQR/'+ data.result);
                 }, 
                 error : function(){
                     $.alert({
