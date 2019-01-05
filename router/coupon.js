@@ -3,6 +3,18 @@ const router = express.Router();
 const request = require('request');
 const utils = require('./../common/common');
 
+
+router.get('/generateQR/:url',(req,res,next)=>{
+    console.log(req.query);
+    console.log(req.params);
+    let {imgsrc} = req.query;
+    res.render('scan.ejs',{
+        src : imgsrc
+        });  
+        next();        
+})
+
+
 router.get('/:id',(req,res,next)=>{   //接收api传过来的coupon数据
     console.log('竟然进入了couponid');
     let id = req.params.id;
@@ -68,14 +80,6 @@ router.get('/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,next)=
     next();
 });
 
-router.get('/generateQR/:url',(req,res,next)=>{
-    console.log(req.query);
-    console.log(req.params);
-    let {imgsrc} = req.query;
-    res.render('scan.ejs',{
-        src : imgsrc
-        });  
-        next();        
-    })
+
 
 module.exports = router;
