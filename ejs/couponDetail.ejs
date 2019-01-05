@@ -118,7 +118,7 @@
                 success: function(json)
                 {
                     let data = JSON.parse(json);
-                    let url = `http://m.zhengshuqian.com/coupon/generateQR/${data.result}`;
+                    let url = encodeURIComponent(`http://m.zhengshuqian.com/coupon/generateQR/${data.result}`);
                     window.location.href = encodeURIComponent(url);
                 }, 
                 error : function(){
