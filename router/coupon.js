@@ -2,11 +2,16 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 const utils = require('./../common/common');
+const QRCode = require('qrcode');
 
 
 router.get('/generateQR',(req,res,next)=>{
     console.log(req.params);
     let {url,type,count} = req.query;
+    console.log('2121');
+    QRCode.toDataURL('I am a pony!', function (err, url) {
+        console.log(url)
+      })
     res.render('scan.ejs',{
         src : url,
         type : type,
