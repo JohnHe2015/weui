@@ -15,7 +15,7 @@ router.get('/generateQR',(req,res,next)=>{
 })
 
 router.get('/result',(req,res,next)=>{   //核销成功的回调函数
-    console.log('核销成功');
+    console.log('come in result');
     res.render('result.ejs',{
 
     });
