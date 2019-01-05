@@ -103,12 +103,13 @@
     });
 
     $("#confirm2").on('click',function(){
+        let _count = $("#count").text().substring(0,1);
         $.ajax(
             { 
                 url: "http://api.zhengshuqian.com/wx/generateQR", 
                 type : "post",
                 data : {
-                    count : $("#count").text().substring(0,1),  //选择的券数量
+                    count : _count,  //选择的券数量
                     id : '<%= data.id%>',
                     type : '<%= data.type%>',
                     startTime : '<%= data.startTime%>',
@@ -118,7 +119,7 @@
                 {
                     let data = JSON.parse(json);
                     let src = data.result;
-                    let url = ('http://m.zhengshuqian.com/coupon/generateQR?url='+encodeURIComponent(src)+'&type=<%= data.cusType %>&count=<%= data.count %>');
+                    let url = ('http://m.zhengshuqian.com/coupon/generateQR?url='+encodeURIComponent(src)+'&type=<%= data.cusType %>&count=' + _count);
                     window.location.href = url;
                 }, 
                 error : function(){
