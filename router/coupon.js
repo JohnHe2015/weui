@@ -4,7 +4,7 @@ const request = require('request');
 const utils = require('./../common/common');
 
 
-router.get('/generateQR/:url',(req,res,next)=>{
+router.get('/generateQR',(req,res,next)=>{
     console.log(req.query);
     console.log(req.params);
     let {imgsrc} = req.query;
