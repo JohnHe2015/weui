@@ -37,12 +37,6 @@ app.set('view engine','ejs');
 app.set('views',__dirname + '/ejs');
 
 
-app.get('/',(req,res,next)=>{
-    console.log(JSON.stringify(req.query));
-    console.log(req.query.nickname);
-    res.sendfile('./index.html')
-})
-
 app.get('/register',(req,res,next)=>{
     console.log('come in register');
     console.log(JSON.stringify(req.query));
@@ -76,6 +70,7 @@ app.get('/register',(req,res,next)=>{
                         groupid : req.query.groupid
                     }
                 })
+                next();
             }
         }
     })
@@ -97,6 +92,7 @@ app.get('/coupon/:id',(req,res,next)=>{   //接收api传过来的coupon数据
                 res.render('coupon.ejs',{
                     data : JSON.parse(data.result)   
                 });
+                next();
             }
         })
 });
@@ -142,6 +138,7 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,ne
             count : count_temp
         }   
     });
+    next();
 });
 
 app.get('/coupon/generateQR/:url',(req,res,next)=>{
@@ -150,5 +147,6 @@ app.get('/coupon/generateQR/:url',(req,res,next)=>{
     let {imgsrc} = req.query;
     res.render('scan.ejs',{
         src : imgsrc
-        });          
+        });  
+        next();        
     })
