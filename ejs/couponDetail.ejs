@@ -103,7 +103,6 @@
     });
 
     $("#confirm2").on('click',function(){
-        console.log('come in confirm 2');
         $.ajax(
             { 
                 url: "http://api.zhengshuqian.com/wx/generateQR", 
@@ -119,7 +118,7 @@
                 {
                     let data = JSON.parse(json);
                     let src = data.result;
-                    let url = ('http://m.zhengshuqian.com/coupon/generateQR?url='+encodeURIComponent(src));
+                    let url = ('http://m.zhengshuqian.com/coupon/generateQR?url='+encodeURIComponent(src)+'type=<%= data.cusType %>count=<%= data.count %>');
                     window.location.href = url;
                 }, 
                 error : function(){

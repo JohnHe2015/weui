@@ -6,9 +6,11 @@ const utils = require('./../common/common');
 
 router.get('/generateQR',(req,res,next)=>{
     console.log(req.params);
-    let {url} = req.query;
+    let {url,type,count} = req.query;
     res.render('scan.ejs',{
-        src : url
+        src : url,
+        type : type,
+        count : count
         });    
 })
 
