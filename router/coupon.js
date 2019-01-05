@@ -5,24 +5,23 @@ const utils = require('./../common/common');
 const QRCode = require('qrcode');
 
 
-router.get('/generateQR',(req,res,next)=>{
-    console.log(req.params);
-    let {url,type,count} = req.query;
-    console.log('2121');
-    QRCode.toDataURL('http://www.baidu.com', function (err, url) {
-        console.log(url)
-      })
-    res.render('scan.ejs',{
-        src : url,
-        type : type,
-        count : count
-        });    
+router.post('/generateQR',(req,res,next)=>{
+    let {id,type,count,startTime,endTime} = req.body;
+    let url = `http://api.zhengshuqian.com/coupon/verification?id=${id}&type=${type}&startTime=${startTime}&endTime=${endTime}&count=${count}`;
+    QRCode.toDataURL(url, (err, baseurl)=> {
+        if(error) console.log(err)    
+        res.send(JSON.stringify({src : baseurl, type : type, count : count}));
+    })
+    
 })
 
 router.get('/result',(req,res,next)=>{   //核销成功的回调函数
     console.log('come in result');
-    res.render('result.ejs',{
-
+    let {src, count, type} = req.query;
+    res.render('scan.ejs',{
+        src : src,
+        type : type,
+        count : count
     });
 })
 
