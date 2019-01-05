@@ -8,6 +8,7 @@ const app = express();
 app.listen(8082);
 
 app.all('*',(req,res,next)=>{
+    console.log('进入主路由');
     res.header('Access-Control-Allow-Origin', '*');
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
     res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
