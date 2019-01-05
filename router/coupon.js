@@ -10,8 +10,7 @@ router.get('/generateQR',(req,res,next)=>{
     let {imgsrc} = req.query;
     res.render('scan.ejs',{
         src : imgsrc
-        });  
-        next();        
+        });    
 })
 
 
@@ -30,7 +29,6 @@ router.get('/:id',(req,res,next)=>{   //接收api传过来的coupon数据
                 res.render('coupon.ejs',{
                     data : JSON.parse(data.result)   
                 });
-                next();
             }
         })
 });
@@ -77,7 +75,6 @@ router.get('/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,next)=
             count : count_temp
         }   
     });
-    next();
 });
 
 
