@@ -118,8 +118,8 @@
                 success: function(json)
                 {
                     let data = JSON.parse(json);
-                    let url = encodeURIComponent(`http://m.zhengshuqian.com/coupon/generateQR/${data.result}`);
-                    window.location.href = encodeURIComponent(url);
+                    let url = encodeURI(`http://m.zhengshuqian.com/coupon/generateQR/${data.result}`);
+                    window.location.href = url;
                 }, 
                 error : function(){
                     $.alert({
