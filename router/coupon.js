@@ -14,7 +14,6 @@ router.get('/generateQR',(req,res,next)=>{
 
 
 router.get('/:id',(req,res,next)=>{   //接收api传过来的coupon数据
-    console.log('竟然进入了couponid');
     let id = req.params.id;
     request.get(
         {   
@@ -33,7 +32,6 @@ router.get('/:id',(req,res,next)=>{   //接收api传过来的coupon数据
 });
 
 router.get('/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,next)=>{        //接收coupon.ejs的参数传递给detail页面
-    console.log('竟然进入了2');
     let {id,count,endTime,startTime,type,rate} = req.params;
     var arr = [];
     let count_temp = parseInt(count);
