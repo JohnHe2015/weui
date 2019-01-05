@@ -141,7 +141,7 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,ne
     next();
 });
 
-app.get('/coupon/generateQR/:url',(req,res,next)=>{
+app.use('/coupon/generateQR/:url',(req,res,next)=>{
     console.log(req.query);
     console.log(req.params);
     let {imgsrc} = req.query;
