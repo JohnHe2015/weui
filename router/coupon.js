@@ -14,6 +14,13 @@ router.get('/generateQR',(req,res,next)=>{
         });    
 })
 
+router.get('/result',(req,res,next)=>{   //核销成功的回调函数
+    console.log('核销成功');
+    res.render('result.ejs',{
+
+    });
+})
+
 
 router.get('/:id',(req,res,next)=>{   //接收api传过来的coupon数据
     let id = req.params.id;
