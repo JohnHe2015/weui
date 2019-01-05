@@ -26,6 +26,10 @@ router.get('/result',(req,res,next)=>{   //核销成功的回调函数
     });
 })
 
+router.get('/success',(req,res,next)=>{ 
+    console.log('come in suusssss');
+})
+
 
 router.get('/:id',(req,res,next)=>{   //接收api传过来的coupon数据
     let id = req.params.id;
