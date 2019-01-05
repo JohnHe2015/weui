@@ -112,6 +112,7 @@
                     count : _count,  //选择的券数量
                     id : '<%= data.id%>',
                     type : '<%= data.type%>',
+                    cusType : '<%= data.cusType %>',
                     startTime : '<%= data.startTime%>',
                     endTime : '<%= data.endTime%>',
                 },
@@ -120,8 +121,9 @@
                     let data = JSON.parse(json);
                     let src = encodeURIComponent(data.src);      //base64地址
                     let type = data.type;
+                    let cusType = data.cusType;
                     let count = data.count;
-                    let url = `/coupon/result?src=${src}&type=${type}&count=${count}`;
+                    let url = `/coupon/result?src=${src}&type=${cusType}&count=${count}`;
                     window.location.href = url;
                 }, 
                 error : function(){
