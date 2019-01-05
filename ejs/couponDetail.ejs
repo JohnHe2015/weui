@@ -118,7 +118,6 @@
                 success: function(json)
                 {
                     let data = JSON.parse(json);
-                    alert(typeof data.result)
                     let src = data.result;
                     let url = encodeURI('http://m.zhengshuqian.com/coupon/generateQR?url='+encodeURIComponent(src));
                     window.location.href = url;
