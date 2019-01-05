@@ -8,7 +8,6 @@ const app = express();
 app.listen(8082);
 
 app.all('*',(req,res,next)=>{
-    console.log('进入主路由');
     res.header('Access-Control-Allow-Origin', '*');
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
     res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
@@ -145,7 +144,7 @@ app.get('/coupon/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,ne
     });
 });
 
-app.all('/coupon/generateQR/',(req,res,next)=>{
+app.get('/coupon/generateQR/:url',(req,res,next)=>{
     console.log(req.query);
     console.log(req.params);
     let {imgsrc} = req.query;
