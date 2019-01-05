@@ -27,7 +27,8 @@ router.get('/result',(req,res,next)=>{   //核销成功的回调函数
 })
 
 router.get('/success',(req,res,next)=>{ 
-    console.log('come in suusssss');
+    res.render('result.ejs',{
+    });
 })
 
 
