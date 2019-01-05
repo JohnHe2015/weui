@@ -9,15 +9,13 @@ router.post('/generateQR',(req,res,next)=>{
     let {id,type,count,startTime,endTime,cusType} = req.body;
     let url = `http://api.zhengshuqian.com/coupon/verification?id=${id}&type=${type}&startTime=${startTime}&endTime=${endTime}&count=${count}`;
     QRCode.toDataURL(url, (err, baseurl)=> {
-        if(err) console.log(err)    
-        console.log(baseurl);
+        if(err) console.log(err)
         res.send(JSON.stringify({src : baseurl, type : type, count : count, cusType : cusType}));
     })
     
 })
 
-router.get('/result',(req,res,next)=>{   //核销成功的回调函数
-    console.log('come in result');
+router.get('/result',(req,res,next)=>{   //获取二维码的base64，渲染scan.ejs
     let {src, count, type} = req.query;
     res.render('scan.ejs',{
         src : src,
