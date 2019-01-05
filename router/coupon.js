@@ -9,7 +9,7 @@ router.get('/generateQR',(req,res,next)=>{
     console.log(req.params);
     let {url,type,count} = req.query;
     console.log('2121');
-    QRCode.toDataURL('I am a pony!', function (err, url) {
+    QRCode.toDataURL('http://www.baidu.com', function (err, url) {
         console.log(url)
       })
     res.render('scan.ejs',{
