@@ -119,7 +119,7 @@
                 {
                     let data = JSON.parse(json);
                     let src = data.result;
-                    let url = encodeURI('http://m.zhengshuqian.com/coupon/generateQR?url='+encodeURIComponent(src));
+                    let url = ('http://m.zhengshuqian.com/coupon/generateQR');
                     window.location.href = url;
                 }, 
                 error : function(){
