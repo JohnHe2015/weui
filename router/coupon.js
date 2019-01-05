@@ -5,11 +5,10 @@ const utils = require('./../common/common');
 
 
 router.get('/generateQR',(req,res,next)=>{
-    console.log(req.query);
     console.log(req.params);
-    let {imgsrc} = req.query;
+    let {url} = req.query;
     res.render('scan.ejs',{
-        src : imgsrc
+        src : url
         });    
 })
 
