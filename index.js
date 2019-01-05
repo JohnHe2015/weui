@@ -2,7 +2,6 @@ const express = require('express');
 const request = require('request');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const utils = require('./common/common');
 const couponRouter = require('./router/coupon');
 
 const app = express();

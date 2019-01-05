@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
+const utils = require('./../common/common');
 
 router.get('/:id',(req,res,next)=>{   //接收api传过来的coupon数据
     console.log('竟然进入了couponid');
