@@ -23,7 +23,7 @@ router.get('/result',(req,res,next)=>{   //获取二维码的base64，渲染scan
     res.render('scan.ejs',{
         data : 
         {
-            src : src,
+            // src : src,
             type : type,
             count : count
         }
