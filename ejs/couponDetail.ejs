@@ -102,9 +102,7 @@
         $(".weui-dialog").css("visibility","hidden");
     });
 
-    $("#confirm2").on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
+    $("#confirm2").on('click',function(){
         let _count = $("#count").text().substring(0,1);
         $.ajax(
             { 
@@ -126,7 +124,7 @@
                     let cusType = data.cusType;
                     let count = data.count;
                     let url = `/coupon/result?src=${src}&type=${cusType}&count=${count}&timestamp=${new Date().getTime()+Math.random()}`;
-                    window.location.href = url;
+                    window.location = url;
                 }, 
                 error : function(){
                     $.alert({
