@@ -118,13 +118,13 @@
                 },
                 success: function(json)
                 {
-                    // let data = JSON.parse(json);
-                    // let src = encodeURIComponent(data.src);      //base64地址
-                    // let type = data.type;
-                    // let cusType = data.cusType;
-                    // let count = data.count;
-                    // let url = `/coupon/result?src=${src}&type=${cusType}&count=${count}`;
-                    // window.location = url;
+                    let data = JSON.parse(json);
+                    let src = encodeURIComponent(data.src);      //base64地址
+                    let type = data.type;
+                    let cusType = data.cusType;
+                    let count = data.count;
+                    let url = `/coupon/result?src=${src}&type=${cusType}&count=${count}`;
+                    window.location.href = url;
                 }, 
                 error : function(){
                     $.alert({
@@ -184,7 +184,7 @@
                         </p>
                     </div>
                     <div class="weui-dialog__ft">
-                        <a id="confirm2" href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                        <a id="confirm2" href="http://www.baidu.com" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
                         <a id="cancel" href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
                     </div>
                 </div>
