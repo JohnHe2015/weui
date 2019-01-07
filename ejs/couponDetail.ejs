@@ -125,6 +125,7 @@
                     let count = data.count;
                     let url = `/coupon/result?src=${src}&type=${cusType}&count=${count}&timestamp=${new Date().getTime()+Math.random()}`;
                     window.location.href = url;
+                    window.event.returnValue=false;
                 }, 
                 error : function(){
                     $.alert({
