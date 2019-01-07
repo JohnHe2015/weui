@@ -104,6 +104,7 @@
 
     $("#confirm2").on('click',function(e){
         e.preventDefault();
+        e.stopPropagation();
         let _count = $("#count").text().substring(0,1);
         $.ajax(
             { 
