@@ -123,7 +123,7 @@
                     let type = data.type;
                     let cusType = data.cusType;
                     let count = data.count;
-                    let url = `/coupon/result?src=${src}&type=${cusType}&count=${count}&timestamp=${new Date().getTime()+Math.random()}`;
+                    let url = `/coupon/result?src=${src}&type=${cusType}&count=${count}`;
                     window.location = url;
                 }, 
                 error : function(){
