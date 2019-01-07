@@ -6,10 +6,9 @@ const QRCode = require('qrcode');
 
 
 router.get('/generateQR',(req,res,next)=>{
-    console.log('come in generateQR');
-    let {id,type,count,startTime,endTime,cusType} = req.body;
+    let {id,type,count,startTime,endTime,cusType} = req.query;
     let url = `http://api.zhengshuqian.com/coupon/verification?id=${id}&type=${type}&startTime=${startTime}&endTime=${endTime}&count=${count}`;
-    QRCode.toDataURL(url, (err, baseurl)=> {
+    QRCode.toDataURL(url, (err, baseurl)=> {     //获取生成的二维码base64后渲染scan.ejs
         if(err) console.log(err)
         res.render('scan.ejs',{
             data : 
@@ -19,26 +18,10 @@ router.get('/generateQR',(req,res,next)=>{
                 count : count
             }
         })
-        //res.send(JSON.stringify({src : baseurl, type : type, count : count, cusType : cusType}));
     })
     
 })
 
-router.get('/result',(req,res,next)=>{   //获取二维码的base64，渲染scan.ejs
-    let {src, count, type} = req.query;
-    console.log("src："+src)
-    console.log("count : "+count)
-    console.log("type:"+type)
-    // res.render('scan.ejs',{
-    //     data : 
-    //     {
-    //         src : src,
-    //         type : type,
-    //         count : count
-    //     }
-    // })
-    res.send(JSON.stringify({errcode : "0" , errmsg : "dd"}))
-})
 
 router.get('/success',(req,res,next)=>{ 
     res.render('result.ejs',{

@@ -89,10 +89,10 @@
         }
         $("#count").text(count+'张');
 
-        //
+        //设置确认按键的href,调用接口
         let url = '/coupon/generateQR?count='+count+'&id=<%= data.id%>&type=<%= data.type%>&cusType=<%= data.cusType %>&startTime=<%= data.startTime%>&endTime=<%= data.endTime%>';
         $('#confirm2').attr('href',url);
-        
+
         //
         $(".weui-mask").css({ opacity: 1 });
         $(".weui-mask").css("visibility","visible");
@@ -110,46 +110,7 @@
         $(".weui-dialog").css("visibility","hidden");
     });
 
-    // $("#confirm2").on('click',function(){
-        // let _count = $("#count").text().substring(0,1);
-        // let url = '/coupon/generateQR?count='+_count+'&id=<%= data.id%>&type=<%= data.type%>&cusType=<%= data.cusType %>&startTime=<%= data.startTime%>&endTime=<%= data.endTime%>';
-        // $('confirm2').attr('href',url);
-        // $('confirm2').click();
-        // $.ajax(
-        //     { 
-        //         url: "/coupon/generateQR", 
-        //         type : "post",
-        //         data : {
-        //             count : _count,  //选择的券数量
-        //             id : '<%= data.id%>',
-        //             type : '<%= data.type%>',
-        //             cusType : '<%= data.cusType %>',
-        //             startTime : '<%= data.startTime%>',
-        //             endTime : '<%= data.endTime%>',
-        //         },
-        //         success: function(json)
-        //         {
-        //             let data = JSON.parse(json);
-        //             let src = encodeURIComponent(data.src);      //base64地址
-        //             let type = data.type;
-        //             let cusType = data.cusType;
-        //             let count = data.count;
-        //             let url = `/coupon/result?src=${src}&type=${cusType}&count=${count}`;
-        //             window.location.href = url;
-        //         }, 
-        //         error : function(){
-        //             $.alert({
-        //                 title: '抱歉',
-        //                 text: '请求失败',
-        //                 onOK: function () {
-        //                         //点击确认
-        //                 }
-        //             });
-        //         }
-        //     }
-        // );
-    // });
-
+   
     });  
     </script>
 </head>
