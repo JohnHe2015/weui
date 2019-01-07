@@ -36,6 +36,18 @@
             color : #816d56;
         }
     </style>
+    <script>
+        window.onload = function(){
+            var $toast = $('#loadingToast');
+       
+            if ($toast.css('display') != 'none') return;
+
+            $toast.fadeIn(100);
+            setTimeout(function () {
+                $toast.fadeOut(100);
+            }, 2000);
+        }
+    </script>
 </head>
 <body>
         <div class="wrapper">
@@ -75,6 +87,13 @@
                             <span class="weui-cell__ft"></span>
                         </a>    
                     </div> -->
+                </div>
+        </div>
+        <div id="loadingToast" style="display:none;">
+                <div class="weui-mask_transparent"></div>
+                <div class="weui-toast">
+                    <i class="weui-loading weui-icon_toast"></i>
+                    <p class="weui-toast__content">数据加载中</p>
                 </div>
         </div>
 </body>
