@@ -90,6 +90,22 @@ router.get('/detail/:id/:type/:startTime/:endTime/:count/:rate/',(req,res,next)=
     });
 });
 
-
+router.get('/history/:id',(req,res,next)=>{    //优惠券兑换历史
+    let id = req.params.id;
+    request.get(
+        {   
+            url:`http://api.zhengshuqian.com/coupon/history/${id}`,
+        },
+        function(error, response, body){
+            let data;
+            if(!error && response.statusCode == 200)
+            {
+                data = JSON.parse(body);
+                res.render('history.ejs',{
+                    data : JSON.parse(data.result)   
+                });
+            }
+        })
+})
 
 module.exports = router;

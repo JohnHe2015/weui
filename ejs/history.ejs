@@ -43,28 +43,27 @@
                 <div class="weui-panel weui-panel_access">
                     
                         <div class="weui-panel__bd">
+                            <% for(let i = 0;i < data.length;i++){ %>
+                                <% let _useTime,_type; %>
+                                <% if(data[i].type == 1){ %>
+                                    <% _type = 'MUSEE CAFE 咖啡券';} %>
+                                <% if(data[i].type == 2){ %>
+                                    <% _type = ((data[i].rate)*10)+"折拍摄券";} %>
+                                <% if(data[i].type == 3){ %>
+                                    <% _type = ((data[i].rate)*10)+"折摄影券";} %>
+                                <% _useTime = utils.getFullDate(parseInt(data[i].useTime)); %>
                             <div class="weui-media-box weui-media-box_text">
-                                <h4 class="weui-media-box__title">MUSEE COFFEE咖啡券</h4>
+                                <h4 class="weui-media-box__title"><%= _type %></h4>
                                 <div class="box-content">
                                     <div style="float: left;text-align: left">
-                                        <p class="weui-media-box__desc">2019-01-12 14:12:12</p>
+                                        <p class="weui-media-box__desc"><%= _useTime %></p>
                                     </div>
                                     <div style="float: right;text-align: right">
-                                        <p class="weui-media-box__desc">2</p>
+                                        <p class="weui-media-box__desc"><%= data[i].count %>张</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="weui-media-box weui-media-box_text">
-                                <h4 class="weui-media-box__title">9.5折摄影券</h4>
-                                <div class="box-content">
-                                    <div style="float: left;text-align: left">
-                                        <p class="weui-media-box__desc">2019-01-12 11:31:11</p>
-                                    </div>
-                                    <div style="float: right;text-align: right">
-                                        <p class="weui-media-box__desc">3</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <% } %>
                         </div>
                     </div>
             </div>
