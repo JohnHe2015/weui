@@ -21,10 +21,13 @@ router.get('/result',(req,res,next)=>{   //获取二维码的base64，渲染scan
     console.log("count : "+count)
     console.log("type:"+type)
     res.render('scan.ejs',{
-        src : src,
-        type : type,
-        count : count
-    });
+        data : 
+        {
+            src : src,
+            type : type,
+            count : count
+        }
+    })
 })
 
 router.get('/success',(req,res,next)=>{ 
