@@ -6,6 +6,7 @@ const QRCode = require('qrcode');
 
 
 router.post('/generateQR',(req,res,next)=>{
+    console.log('come in generateQR');
     let {id,type,count,startTime,endTime,cusType} = req.body;
     let url = `http://api.zhengshuqian.com/coupon/verification?id=${id}&type=${type}&startTime=${startTime}&endTime=${endTime}&count=${count}`;
     QRCode.toDataURL(url, (err, baseurl)=> {
