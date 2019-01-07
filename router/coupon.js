@@ -20,14 +20,15 @@ router.get('/result',(req,res,next)=>{   //获取二维码的base64，渲染scan
     console.log("src："+src)
     console.log("count : "+count)
     console.log("type:"+type)
-    res.render('scan.ejs',{
-        data : 
-        {
-            src : src,
-            type : type,
-            count : count
-        }
-    })
+    // res.render('scan.ejs',{
+    //     data : 
+    //     {
+    //         src : src,
+    //         type : type,
+    //         count : count
+    //     }
+    // })
+    res.send(JSON.stringify({errcode : "0" , errmsg : "caoni"}))
 })
 
 router.get('/success',(req,res,next)=>{ 
