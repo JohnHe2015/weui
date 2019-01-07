@@ -92,6 +92,10 @@
         $(".weui-mask").css("visibility","visible");
         $(".weui-dialog").css({ opacity: 1 });
         $(".weui-dialog").css("visibility","visible");
+
+        //
+        let url = '/coupon/generateQR?count='+count+'&id=<%= data.id%>&type=<%= data.type%>&cusType=<%= data.cusType %>&startTime=<%= data.startTime%>&endTime=<%= data.endTime%>';
+        $('confirm2').attr('href',url);
         
     });
 
@@ -102,11 +106,11 @@
         $(".weui-dialog").css("visibility","hidden");
     });
 
-    $("#confirm2").on('click',function(){
-        let _count = $("#count").text().substring(0,1);
-        let url = '/coupon/generateQR?count='+_count+'&id=<%= data.id%>&type=<%= data.type%>&cusType=<%= data.cusType %>&startTime=<%= data.startTime%>&endTime=<%= data.endTime%>';
-        $('confirm2').attr('href',url);
-        $('confirm2').click();
+    // $("#confirm2").on('click',function(){
+        // let _count = $("#count").text().substring(0,1);
+        // let url = '/coupon/generateQR?count='+_count+'&id=<%= data.id%>&type=<%= data.type%>&cusType=<%= data.cusType %>&startTime=<%= data.startTime%>&endTime=<%= data.endTime%>';
+        // $('confirm2').attr('href',url);
+        // $('confirm2').click();
         // $.ajax(
         //     { 
         //         url: "/coupon/generateQR", 
@@ -140,7 +144,7 @@
         //         }
         //     }
         // );
-    });
+    // });
 
     });  
     </script>
