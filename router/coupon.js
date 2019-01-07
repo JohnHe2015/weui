@@ -19,7 +19,7 @@ router.post('/generateQR',(req,res,next)=>{
     })
     //     if(err) console.log(err)
     //     res.send(JSON.stringify({src : baseurl, type : type, count : count, cusType : cusType}));
-    // })
+     })
     
 })
 
