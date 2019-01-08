@@ -6,6 +6,7 @@ const QRCode = require('qrcode');
 
 
 router.get('/generateQR',(req,res,next)=>{
+    console.log('come in coupon/generateQR');
     let {id,type,count,startTime,endTime,cusType} = req.query;
     let url = `http://api.zhengshuqian.com/coupon/verification?id=${id}&type=${type}&startTime=${startTime}&endTime=${endTime}&count=${count}`;
     QRCode.toDataURL(url, (err, baseurl)=> {     //获取生成的二维码base64后渲染scan.ejs
